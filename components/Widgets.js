@@ -1,11 +1,12 @@
 import { SearchIcon } from '@heroicons/react/outline';
 import { DotsHorizontalIcon, VideoCameraIcon } from '@heroicons/react/solid';
+import Contact from './Contact';
 
 const contacts = [
-    { src: '/johnwick.jpg', name: "John Wick" },
-    { src: '/magnuscarlsen.jpg', name: "Magnus Carlsen" },
-    { src: '/steveballmer.jpg', name: "Steve Ballmer" },
-    { src: '/stephcurry.jpg', name: "Steph Curry" },
+    { id: 1, src: '/johnwick.jpg', name: "John Wick" },
+    { id: 2, src: '/magnuscarlsen.jpg', name: "Magnus Carlsen" },
+    { id: 3, src: '/steveballmer.jpg', name: "Steve Ballmer" },
+    { id: 4, src: '/stephcurry.jpg', name: "Steph Curry" },
 ]
 
 function Widgets() {
@@ -21,7 +22,7 @@ function Widgets() {
             </div>
 
             {contacts.map(contact => (
-                <Contact />
+                <Contact key={contact.id} src={contact.src} name={contact.name} />
             ))}
         </div>
     )
